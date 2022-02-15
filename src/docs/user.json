@@ -1,0 +1,127 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Contract",
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"description": "Mock server",
+			"url": "http://127.0.0.1:4011"
+		}
+	],
+	"paths": {
+		"/user/id/{userId}": {
+			"get": {
+				"tags": ["User"],
+				"operationId": "getUser",
+				"description": "Get user",
+				"parameters": [
+					{
+						"name": "userId",
+						"in": "path",
+						"description": "User id",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/UuidDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserDto"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": ["User"],
+				"operationId": "updateUser",
+				"description": "Update user",
+				"parameters": [
+					{
+						"name": "userId",
+						"in": "path",
+						"description": "User id",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/UuidDto"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UserDto"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/UserDto"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"IsoDateDto": {
+				"$ref": "./components/schemas/IsoDateDto.json"
+			},
+			"IsoDateWithTimeDto": {
+				"$ref": "./components/schemas/IsoDateWithTimeDto.json"
+			},
+			"UuidDto": {
+				"$ref": "./components/schemas/UuidDto.json"
+			},
+			"UserDto": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"$ref": "#/components/schemas/UuidDto"
+					},
+					"firstname": {
+						"type": "string"
+					},
+					"lastname": {
+						"type": "string"
+					},
+					"year": {
+						"$ref": "#/components/schemas/IsoDateDto"
+					},
+					"creationDate": {
+						"$ref": "#/components/schemas/IsoDateWithTimeDto"
+					},
+					"updateDate": {
+						"$ref": "#/components/schemas/IsoDateWithTimeDto"
+					}
+				},
+				"required": [
+					"id",
+					"firstname",
+					"lastname",
+					"year",
+					"creationDate"
+				],
+				"additionalProperties": false
+			}
+		}
+	}
+}

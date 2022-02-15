@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./",
+		"module": "commonjs",
+		"target": "es5",
+		"esModuleInterop": true,
+		"strict": true,
+		"outDir": "dist-proxy",
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["src/mock-proxy/**/*"],
+	"exclude": ["node_modules"]
+}

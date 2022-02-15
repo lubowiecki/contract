@@ -1,0 +1,13 @@
+{
+	"root": true,
+	"ignorePatterns": ["src/mock-proxy/dtos"],
+	"overrides": [
+		{
+			"files": ["*.ts"],
+			"parserOptions": {
+				"project": ["tsconfig.json"]
+			},
+			"extends": ["@lubowiecki/base"]
+		}
+	]
+}

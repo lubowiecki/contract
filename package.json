@@ -14,14 +14,13 @@
 		"@lubowiecki/node-openapi": "^1.0.0",
 		"@lubowiecki/node-utility": "^1.0.0",
 		"@stoplight/prism-cli": "^4.7.0",
-		"express": "^4.17.2",
+		"express": "^4.17.3",
 		"http-proxy-middleware": "^2.0.3",
 		"nodemon": "^2.0.15",
 		"ts-node": "^10.5.0"
 	},
 	"devDependencies": {
 		"@lubowiecki/eslint-config-base": "^1.0.0",
-		"@types/csurf": "^1.11.2",
 		"@types/express": "^4.17.13",
 		"@types/http-proxy-middleware": "^1.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.12.0",

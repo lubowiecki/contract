@@ -1,6 +1,6 @@
 import http from 'http';
 
-import { createReadStream, readFileSync, statSync } from 'fs-extra';
+import { readFileSync } from 'fs-extra';
 import { HttpAdapters, HttpRequestWithBody } from '@lubowiecki/node-utility';
 
 import { userDtoOne } from './examples/user-dto-one';
@@ -21,10 +21,11 @@ export class User {
 
 		if (req.url?.match(`^/user/cv/${userDtoOne.id}`) && req.method === 'GET') {
 			const file = readFileSync('src/static/files/test.txt');
+			const fileAsString = file.toString('utf8');
 
-			proxyRes.headers['content-type'] = 'text/plain';
+			res.setHeader('content-length', fileAsString.length);
 
-			modifyResponse(res, proxyRes, (body: any) => file.toString());
+			modifyResponse(res, proxyRes, (body: any) => fileAsString);
 		}
 	}
 }

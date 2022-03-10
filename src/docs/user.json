@@ -84,7 +84,7 @@
 				"tags": ["User"],
 				"operationId": "getUserCv",
 				"description": "Get user",
-				"summary": "Returns the CV in the PDF format",
+				"summary": "Returns the CV",
 				"parameters": [
 					{
 						"name": "userId",
@@ -108,7 +108,7 @@
 							}
 						},
 						"content": {
-							"application/octet-stream": {
+							"text/plain": {
 								"schema": {
 									"type": "string",
 									"format": "binary"

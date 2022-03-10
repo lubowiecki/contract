@@ -11,7 +11,7 @@
 		}
 	],
 	"paths": {
-		"/user/id/{userId}": {
+		"/user/{userId}": {
 			"get": {
 				"tags": ["User"],
 				"operationId": "getUser",
@@ -72,6 +72,46 @@
 							"application/json": {
 								"schema": {
 									"$ref": "#/components/schemas/UserDto"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/user/cv/{userId}": {
+			"get": {
+				"tags": ["User"],
+				"operationId": "getUserCv",
+				"description": "Get user",
+				"summary": "Returns the CV in the PDF format",
+				"parameters": [
+					{
+						"name": "userId",
+						"in": "path",
+						"description": "User id",
+						"required": true,
+						"schema": {
+							"$ref": "#/components/schemas/UuidDto"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "A file",
+						"headers": {
+							"X-File-Name": {
+								"schema": {
+									"type": "string",
+									"example": "test.txt"
+								}
+							}
+						},
+						"content": {
+							"application/octet-stream": {
+								"schema": {
+									"type": "string",
+									"format": "binary"
 								}
 							}
 						}

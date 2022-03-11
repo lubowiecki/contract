@@ -5,8 +5,6 @@ import { HttpAdapters, HttpRequestWithBody } from '@lubowiecki/node-utility';
 
 import { userDtoOne } from './examples/user-dto-one';
 
-const modifyResponse = require('node-http-proxy-json');
-
 export class User {
 	processReq(proxyReq: http.ClientRequest, req: HttpRequestWithBody, res: http.ServerResponse): void {}
 
@@ -20,12 +18,12 @@ export class User {
 		}
 
 		if (req.url?.match(`^/user/cv/${userDtoOne.id}`) && req.method === 'GET') {
-			const file = readFileSync('src/static/files/test.txt');
-			const fileAsString = file.toString('utf8');
+			const file = readFileSync('src/static/files/test.pdf');
 
-			res.setHeader('content-length', fileAsString.length);
+			proxyRes.headers['content-length'] = `${file.byteLength}`;
 
-			modifyResponse(res, proxyRes, (body: any) => fileAsString);
+			res.writeHead(200, 'OK', proxyRes.headers);
+			res.write(file);
 		}
 	}
 }

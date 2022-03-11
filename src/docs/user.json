@@ -98,17 +98,17 @@
 				],
 				"responses": {
 					"200": {
-						"description": "A file",
+						"description": "A PDF file",
 						"headers": {
 							"X-File-Name": {
 								"schema": {
 									"type": "string",
-									"example": "test.txt"
+									"example": "test.pdf"
 								}
 							}
 						},
 						"content": {
-							"text/plain": {
+							"application/pdf": {
 								"schema": {
 									"type": "string",
 									"format": "binary"

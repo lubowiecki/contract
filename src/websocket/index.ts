@@ -1,53 +1,52 @@
 import { createServer } from 'http';
 
-import WebSocket, { WebSocketServer } from 'ws';
+import { Server, Socket } from 'socket.io';
 import { Notify } from '@lubowiecki/node-utility';
 
 enum WsResponseType {
 	newData = 'newData'
 }
 
-function sednEvery5Sec(ws: WebSocket): void {
+function sednEvery5Sec(socket: Socket): void {
 	const data = {
 		type: WsResponseType.newData,
 		message: `New data: ${Math.random()}`,
 	};
 
-	ws.send(JSON.stringify(data));
+	socket.send(JSON.stringify(data));
 
-	setTimeout(() => sednEvery5Sec(ws), 5000);
+	setTimeout(() => sednEvery5Sec(socket), 5000);
 }
 
 const server = createServer();
 
-const wss = new WebSocketServer({
-	noServer: true,
+const io = new Server(server, {
+	cors: {
+		origin: 'http://localhost:4201',
+		methods: ['GET', 'POST'],
+		credentials: true,
+	},
 });
 
-wss.on('connection', (ws) => {
-	Notify.info({ message: 'Connected' });
+io.of('/v1').on('connection', (socket) => {
+	Notify.info({ message: `Connected with token: ${socket.handshake.auth.token}` });
 
-	ws.on(
-		'message',
-		(message) => Notify.info({ message: `Received: ${message}` }),
+	socket.on(
+		'user:create',
+		(message) => Notify.info({ message: `Received create: ${message}` }),
 	);
 
-	ws.on(
-		'close',
+	socket.on(
+		'user:update',
+		(message) => Notify.info({ message: `Received update: ${message}` }),
+	);
+
+	socket.on(
+		'disconnect',
 		() => Notify.info({ message: 'Closed' }),
 	);
 
-	sednEvery5Sec(ws);
-});
-
-server.on('upgrade', (request, socket, head) => {
-	if (request.url === '/v1') {
-		wss.handleUpgrade(request, socket, head, (ws) => {
-			wss.emit('connection', ws, request);
-		});
-	} else {
-		socket.destroy();
-	}
+	sednEvery5Sec(socket);
 });
 
 server.listen(

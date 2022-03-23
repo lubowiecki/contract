@@ -4,14 +4,14 @@
 	"scripts": {
 		"openapi": "openapi",
 		"spec:preview": "nodemon",
-		"spec:build": "openapi b spec --source=src/docs/user.json",
+		"spec:build": "openapi b spec --source=src/docs/user.json --source=src/docs/websocket.json",
 		"spec:serve": "openapi s spec",
-		"dtos:build": "openapi b typescript --dist=src/mock-proxy/dtos",
+		"dtos:build": "openapi b typescript --dist=src/mock/dtos",
 		"mock:server": "prism mock ./dist/index.json",
-		"mock:proxy": "ts-node src/mock-proxy/index.ts",
-		"mock:static": "ts-node src/static/index.ts",
-		"mock:eventsource": "ts-node src/eventsource/index.ts",
-		"mock:websocket": "ts-node src/websocket/index.ts"
+		"mock:proxy": "ts-node src/mock/proxy/index.ts",
+		"mock:static": "ts-node src/mock/static/index.ts",
+		"mock:eventsource": "ts-node src/mock/eventsource/index.ts",
+		"mock:websocket": "ts-node src/mock/websocket/index.ts"
 	},
 	"dependencies": {
 		"@lubowiecki/node-openapi": "^1.0.1",

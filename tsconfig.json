@@ -3,7 +3,11 @@
 		"baseUrl": "./",
 		"esModuleInterop": true,
 		"strict": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"paths": {
+			"@dtos": ["./src/mock/dtos/models.ts"]
+		}
 	},
 	"include": ["src/**/*"],
 	"exclude": ["node_modules"]

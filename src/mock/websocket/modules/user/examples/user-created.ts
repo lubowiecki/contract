@@ -1,6 +1,6 @@
-import { UserDto } from 'src/mock-proxy/dtos/models';
+import { UserDto } from '@dtos';
 
-export const userDtoOne: UserDto = {
+export const userCreated: UserDto = {
 	id: '10000000-aaaa-dddd-ffff-000000000000',
 	firstname: 'firstname',
 	lastname: 'lastname',

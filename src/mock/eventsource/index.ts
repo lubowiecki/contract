@@ -3,15 +3,15 @@ import express from 'express';
 
 const app = express();
 
-function sednEvery5Sec(res: any): void {
+function sendEvery5Sec(res: any): void {
 	res.write(`data: Message from EventSource ${Math.random()}\n\n`);
 
-	setTimeout(() => sednEvery5Sec(res), 5000);
+	setTimeout(() => sendEvery5Sec(res), 5000);
 }
 
 app.get('/v1', (req, res) => {
 	res.setHeader('Content-Type', 'text/event-stream');
-	sednEvery5Sec(res);
+	sendEvery5Sec(res);
 });
 
 app.listen(

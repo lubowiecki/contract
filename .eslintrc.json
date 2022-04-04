@@ -7,7 +7,29 @@
 			"parserOptions": {
 				"project": ["tsconfig.json"]
 			},
-			"extends": ["@lubowiecki/base"]
+			"extends": ["@lubowiecki/base"],
+			"plugins": ["@lubowiecki/assertions"],
+			"rules": {
+				"import/order": [
+					"error",
+					{
+						"groups": ["builtin", "external", "internal"],
+						"pathGroups": [
+							{
+								"pattern": "@dtos",
+								"group": "internal"
+							}
+						],
+						"pathGroupsExcludedImportTypes": ["builtin"],
+						"newlines-between": "always"
+					}
+				],
+				"@lubowiecki/assertions/assertions-code": [
+					"error",
+					"^[a-z0-9]{8}$"
+				],
+				"@lubowiecki/assertions/assertions-condition": ["error"]
+			}
 		}
 	]
 }

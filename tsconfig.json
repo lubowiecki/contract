@@ -1,14 +1,14 @@
 {
 	"compilerOptions": {
 		"baseUrl": "./",
-		"module": "commonjs",
-		"target": "es5",
 		"esModuleInterop": true,
 		"strict": true,
-		"outDir": "dist-proxy",
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"paths": {
+			"@dtos": ["./src/mock/dtos/models.ts"]
+		}
 	},
-	"include": ["src/mock-proxy/**/*"],
+	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
 }

@@ -1,0 +1,28 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Contract",
+		"version": "1.0.0"
+	},
+	"servers": [
+		{
+			"description": "Mock server",
+			"url": "http://127.0.0.1:4011"
+		}
+	],
+	"paths": {},
+	"components": {
+		"schemas": {
+			"WebSocketEventType": {
+				"type": "string",
+				"enum": ["user:create", "user:created", "user:update"],
+				"example": "user:create",
+				"x-enumDescriptions": {
+					"user:create": "create user",
+					"user:created": "user created",
+					"user:update": "update user"
+				}
+			}
+		}
+	}
+}

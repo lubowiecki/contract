@@ -4,31 +4,36 @@
 	"scripts": {
 		"openapi": "openapi",
 		"spec:preview": "nodemon",
-		"spec:build": "openapi b spec --source=src/docs/user.json",
+		"spec:build": "openapi b spec --source=src/docs/user.json --source=src/docs/websocket.json",
 		"spec:serve": "openapi s spec",
-		"dtos:build": "openapi b typescript --dist=src/mock-proxy/dtos",
+		"dtos:build": "openapi b typescript --dist=src/mock/dtos",
 		"mock:server": "prism mock ./dist/index.json",
-		"mock:proxy": "ts-node src/mock-proxy/index.ts",
-		"mock:static": "npx ts-node src/static/index.ts"
+		"mock:proxy": "ts-node src/mock/proxy/index.ts",
+		"mock:static": "ts-node src/mock/static/index.ts",
+		"mock:eventsource": "ts-node src/mock/eventsource/index.ts",
+		"mock:websocket": "ts-node src/mock/websocket/index.ts"
 	},
 	"dependencies": {
-		"@lubowiecki/node-openapi": "^1.0.1",
-		"@lubowiecki/node-utility": "^1.0.1",
+		"@lubowiecki/node-openapi": "^1.0.2",
+		"@lubowiecki/node-utility": "^1.0.2",
+		"@lubowiecki/ts-utility": "^1.0.2",
 		"@stoplight/prism-cli": "^4.8.0",
 		"express": "^4.17.3",
 		"fs-extra": "^10.0.1",
-		"http-proxy-middleware": "^2.0.3",
+		"http-proxy-middleware": "^2.0.4",
 		"nodemon": "^2.0.15",
+		"socket.io": "^4.4.1",
 		"ts-node": "^10.7.0"
 	},
 	"devDependencies": {
-		"@lubowiecki/eslint-config-base": "^1.0.1",
+		"@lubowiecki/eslint-config-base": "^1.0.2",
+		"@lubowiecki/eslint-plugin-assertions": "^1.0.2",
 		"@types/express": "^4.17.13",
 		"@types/fs-extra": "^9.0.13",
 		"@types/http-proxy-middleware": "^1.0.0",
-		"@typescript-eslint/eslint-plugin": "^5.14.0",
-		"@typescript-eslint/parser": "^5.14.0",
-		"eslint": "^8.10.0",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"eslint": "^8.12.0",
 		"eslint-plugin-import": "^2.25.4"
 	}
 }

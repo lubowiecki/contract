@@ -18,7 +18,7 @@ export class User {
 		}
 
 		if (req.url?.match(`^/user/cv/${userDtoOne.id}`) && req.method === 'GET') {
-			const file = readFileSync('src/static/files/test.pdf');
+			const file = readFileSync('src/mock/static/files/test.pdf');
 
 			proxyRes.headers['content-length'] = `${file.byteLength}`;
 

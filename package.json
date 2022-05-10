@@ -17,7 +17,7 @@
 		"@lubowiecki/node-openapi": "^1.0.2",
 		"@lubowiecki/node-utility": "^1.0.2",
 		"@lubowiecki/ts-utility": "^1.0.2",
-		"@stoplight/prism-cli": "^4.8.0",
+		"@stoplight/prism-cli": "^4.9.0",
 		"express": "^4.17.3",
 		"fs-extra": "^10.0.1",
 		"http-proxy-middleware": "^2.0.4",

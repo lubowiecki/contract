@@ -23,7 +23,7 @@
 		"http-proxy-middleware": "^2.0.6",
 		"nodemon": "^2.0.16",
 		"socket.io": "^4.5.0",
-		"ts-node": "^10.7.0"
+		"ts-node": "^10.8.0"
 	},
 	"devDependencies": {
 		"@lubowiecki/eslint-config-base": "^1.0.3",

@@ -1,7 +1,7 @@
 import { UserDto } from '@dtos';
 
 export const userDtoOne: UserDto = {
-	id: '10000000-aaaa-dddd-ffff-000000000000',
+	id: '00000000-aaaa-dddd-ffff-000000000000',
 	firstname: 'firstname',
 	lastname: 'lastname',
 	year: '2021-09-15',

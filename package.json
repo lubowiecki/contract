@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@lubowiecki/node-openapi": "^1.0.6",
-		"@lubowiecki/node-utility": "^1.0.6",
+		"@lubowiecki/node-utility": "^1.0.7",
 		"@lubowiecki/ts-utility": "^1.0.6",
 		"@stoplight/prism-cli": "^4.10.1",
 		"express": "^4.18.1",

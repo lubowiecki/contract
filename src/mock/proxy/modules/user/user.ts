@@ -1,7 +1,7 @@
 import http from 'http';
 
 import { readFileSync } from 'fs-extra';
-import { HttpAdapters, HttpRequestWithBody } from '@lubowiecki/node-utility';
+import { HttpAdapters, HttpRequestWithBody } from '@opi_pib/node-utility';
 
 import { userDtoOne } from './examples/user-dto-one';
 

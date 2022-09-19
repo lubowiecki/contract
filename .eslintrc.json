@@ -7,8 +7,8 @@
 			"parserOptions": {
 				"project": ["tsconfig.json"]
 			},
-			"extends": ["@lubowiecki/base"],
-			"plugins": ["@lubowiecki/assertions"],
+			"extends": ["@opi_pib/base"],
+			"plugins": ["@opi_pib/assertions"],
 			"rules": {
 				"import/order": [
 					"error",
@@ -24,11 +24,11 @@
 						"newlines-between": "always"
 					}
 				],
-				"@lubowiecki/assertions/assertions-code": [
+				"@opi_pib/assertions/assertions-code": [
 					"error",
 					"^[a-z0-9]{8}$"
 				],
-				"@lubowiecki/assertions/assertions-condition": ["error"]
+				"@opi_pib/assertions/assertions-condition": ["error"]
 			}
 		}
 	]

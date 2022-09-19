@@ -2,7 +2,7 @@ import http from 'http';
 
 import express from 'express';
 import { createProxyMiddleware, Options } from 'http-proxy-middleware';
-import { HttpAdapters, HttpRequestWithBody } from '@lubowiecki/node-utility';
+import { HttpAdapters, HttpRequestWithBody } from '@opi_pib/node-utility';
 
 import { User } from './modules/user/user';
 

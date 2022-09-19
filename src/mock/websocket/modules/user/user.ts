@@ -1,4 +1,4 @@
-import { Notify } from '@lubowiecki/node-utility';
+import { Notify } from '@opi_pib/node-utility';
 import { Socket } from 'socket.io';
 
 import { WebSocketEventsMap } from '../../web-socket-events-map';

@@ -1,7 +1,7 @@
 import { createServer } from 'http';
 
 import { Server, Socket } from 'socket.io';
-import { Notify } from '@lubowiecki/node-utility';
+import { Notify } from '@opi_pib/node-utility';
 
 import { User } from './modules/user/user';
 import { WebSocketEventsMap } from './web-socket-events-map';

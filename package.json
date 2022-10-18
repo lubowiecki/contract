@@ -14,7 +14,7 @@
 		"mock:websocket": "ts-node src/mock/websocket/index.ts"
 	},
 	"dependencies": {
-		"@opi_pib/node-openapi": "^1.0.1",
+		"@opi_pib/node-openapi": "^1.0.3",
 		"@opi_pib/node-utility": "^1.0.0",
 		"@opi_pib/ts-utility": "^1.0.0",
 		"@stoplight/prism-cli": "^4.10.4",

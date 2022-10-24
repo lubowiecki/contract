@@ -14,25 +14,25 @@
 		"mock:websocket": "ts-node src/mock/websocket/index.ts"
 	},
 	"dependencies": {
-		"@opi_pib/node-openapi": "^1.0.1",
-		"@opi_pib/node-utility": "^1.0.0",
-		"@opi_pib/ts-utility": "^1.0.0",
-		"@stoplight/prism-cli": "^4.10.4",
-		"express": "^4.18.1",
+		"@opi_pib/node-openapi": "^1.0.3",
+		"@opi_pib/node-utility": "^1.0.2",
+		"@opi_pib/ts-utility": "^1.0.2",
+		"@stoplight/prism-cli": "^4.10.5",
+		"express": "^4.18.2",
 		"fs-extra": "^10.1.0",
 		"http-proxy-middleware": "^2.0.6",
 		"nodemon": "^2.0.20",
-		"socket.io": "^4.5.2",
+		"socket.io": "^4.5.3",
 		"ts-node": "^10.9.1"
 	},
 	"devDependencies": {
-		"@opi_pib/eslint-config-base": "^1.0.0",
-		"@opi_pib/eslint-plugin-assertions": "^1.0.0",
+		"@opi_pib/eslint-config-base": "^1.0.1",
+		"@opi_pib/eslint-plugin-assertions": "^1.0.2",
 		"@types/express": "^4.17.14",
 		"@types/fs-extra": "^9.0.13",
-		"@typescript-eslint/eslint-plugin": "^5.37.0",
-		"@typescript-eslint/parser": "^5.37.0",
-		"eslint": "^8.23.1",
+		"@typescript-eslint/eslint-plugin": "^5.40.1",
+		"@typescript-eslint/parser": "^5.40.1",
+		"eslint": "^8.26.0",
 		"eslint-plugin-import": "^2.26.0"
 	}
 }

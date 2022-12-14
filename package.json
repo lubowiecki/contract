@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@opi_pib/node-openapi": "^1.0.3",
-		"@opi_pib/node-utility": "^1.0.2",
+		"@opi_pib/node-utility": "^1.0.4",
 		"@opi_pib/ts-utility": "^1.0.2",
 		"@stoplight/prism-cli": "^4.10.5",
 		"express": "^4.18.2",

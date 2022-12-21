@@ -1,5 +1,8 @@
 # Contract
 
+Node: v16.18.0
+Npm: 8.19.2
+
 ## Usage
 
 ### 1. Build contract

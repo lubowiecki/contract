@@ -1,6 +1,6 @@
 # Contract
 
-Node: v16.18.0
+Node: v18.12.1
 Npm: 8.19.2
 
 ## Usage
@@ -23,6 +23,9 @@ npm run dtos:build
 ```
 npm run mock:server
 npm run mock:proxy
+npm run mock:static
+npm run mock:eventsource
+npm run mock:websocket
 ```
 
 ### 4. Run contract preview

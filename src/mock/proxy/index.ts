@@ -16,7 +16,7 @@ app.use(express.json());
 const user = new User();
 
 const proxyOptions: Options = {
-	target: 'http://localhost:4010',
+	target: 'http://127.0.0.1:4010',
 	changeOrigin: true,
 	onProxyReq: function (proxyReq: http.ClientRequest, req: HttpRequestWithBody, res: http.ServerResponse) {
 		user.processReq(proxyReq, req, res);

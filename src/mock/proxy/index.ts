@@ -1,12 +1,7 @@
-import http from 'http';
-
 import express from 'express';
-import { createProxyMiddleware, Options } from 'http-proxy-middleware';
-import { HttpAdapters, HttpRequestWithBody } from '@opi_pib/node-utility';
+import { HttpProxyMiddleware, ProxyOptions } from '@opi_pib/node-utility';
 
 import { User } from './modules/user/user';
-
-type OnProxyReqCallbackExtended = (proxyReq: http.ClientRequest, req: any, res: http.ServerResponse) => void;
 
 const app = express();
 
@@ -15,19 +10,19 @@ app.use(express.json());
 
 const user = new User();
 
-const proxyOptions: Options = {
+const proxyOptions: ProxyOptions = {
 	target: 'http://127.0.0.1:4010',
 	changeOrigin: true,
-	onProxyReq: function (proxyReq: http.ClientRequest, req: HttpRequestWithBody, res: http.ServerResponse) {
-		user.processReq(proxyReq, req, res);
+	onProxyReq(proxyReq, req, res, options) {
+		user.processReq(proxyReq, req, res, options);
 
-		HttpAdapters.writeParsedBody(proxyReq, req);
-	} as OnProxyReqCallbackExtended,
-	onProxyRes(proxyRes: http.IncomingMessage, req: http.IncomingMessage, res: http.ServerResponse) {
+		HttpProxyMiddleware.writeParsedBody(proxyReq, req);
+	},
+	onProxyRes(proxyRes, req, res) {
 		user.processRes(proxyRes, req, res);
 	},
 };
 
-app.use('/', createProxyMiddleware(proxyOptions));
+app.use('/', HttpProxyMiddleware.create(proxyOptions));
 
 app.listen(4011);

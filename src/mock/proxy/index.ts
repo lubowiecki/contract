@@ -1,5 +1,5 @@
 import express from 'express';
-import { HttpProxyMiddleware, ProxyOptions } from '@opi_pib/node-utility';
+import { HttpProxyMiddleware, Notify, ProxyOptions } from '@opi_pib/node-utility';
 
 import { User } from './modules/user/user';
 
@@ -25,4 +25,6 @@ const proxyOptions: ProxyOptions = {
 
 app.use('/', HttpProxyMiddleware.create(proxyOptions));
 
-app.listen(4011);
+app.listen(4011, () => {
+	Notify.success({ message: '[Server]: created at http://localhost:4011' });
+});

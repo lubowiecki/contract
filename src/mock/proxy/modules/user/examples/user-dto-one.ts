@@ -5,6 +5,6 @@ export const userDtoOne: UserDto = {
 	firstname: 'firstname',
 	lastname: 'lastname',
 	year: '2021-09-15',
-	creationDate: '2022-10-31T09:08:34',
+	creationDate: '2022-10-31T09:08:34Z',
 	updateDate: '2022-10-31T09:08:34Z',
 };

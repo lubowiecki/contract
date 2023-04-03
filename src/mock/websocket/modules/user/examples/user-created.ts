@@ -5,5 +5,5 @@ export const userCreated: UserDto = {
 	firstname: 'firstname',
 	lastname: 'lastname',
 	year: '2021-09-15',
-	creationDate: '2021-09-15T09:01:05',
+	creationDate: '2021-09-15T09:01:05Z',
 };

@@ -1,7 +1,7 @@
-# Contract
+# Angular Contract
 
-Node: v18.12.1
-Npm: 8.19.2
+Node: v18.15.0
+Npm: 9.5.0
 
 ## Usage
 

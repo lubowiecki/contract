@@ -7,7 +7,7 @@
 			"parserOptions": {
 				"project": ["tsconfig.json"]
 			},
-			"extends": ["@opi_pib/base"],
+			"extends": ["@opi_pib/base", "prettier"],
 			"plugins": ["@opi_pib/assertions"],
 			"rules": {
 				"import/order": [

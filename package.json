@@ -20,7 +20,7 @@
 		"@stoplight/prism-cli": "^5.0.1",
 		"express": "^4.18.2",
 		"nodemon": "^2.0.22",
-		"socket.io": "^4.6.2",
+		"socket.io": "^4.7.0",
 		"ts-node": "^10.9.1"
 	},
 	"devDependencies": {

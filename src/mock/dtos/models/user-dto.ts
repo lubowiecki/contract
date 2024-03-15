@@ -1,8 +1,8 @@
 /* tslint:disable */
 /* eslint-disable */
-import { IsoDateDto } from './iso-date-dto';
-import { IsoDateWithTimeDto } from './iso-date-with-time-dto';
-import { UuidDto } from './uuid-dto';
+import { IsoDateDto } from '../models/iso-date-dto';
+import { IsoDateWithTimeDto } from '../models/iso-date-with-time-dto';
+import { UuidDto } from '../models/uuid-dto';
 export interface UserDto {
   "creationDate": IsoDateWithTimeDto;
   "firstname": string;

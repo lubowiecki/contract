@@ -1,5 +1,10 @@
 import {
-	HttpAdapters, ProxyRequest, ClientRequest, IncomingMessage, ServerOptions, ServerResponse,
+	HttpAdapters,
+	ProxyRequest,
+	ClientRequest,
+	IncomingMessage,
+	ServerOptions,
+	ServerResponse,
 } from '@opi_pib/node-utility';
 
 import { userDtoOne } from './examples/user-dto-one';
@@ -10,7 +15,7 @@ export class User {
 		req: IncomingMessage,
 		res: ServerResponse,
 		options: ServerOptions,
-	): void { }
+	): void {}
 
 	processRes(
 		proxyRes: IncomingMessage,
@@ -33,11 +38,18 @@ export class User {
 			}
 		}
 
-		if (req._parsedUrl?.pathname.match('^/user/cv$') && req.method === 'GET') {
+		if (
+			req._parsedUrl?.pathname.match('^/user/cv$') &&
+			req.method === 'GET'
+		) {
 			const userId = req.query?.userId;
 
 			if (userId === userDtoOne.id) {
-				HttpAdapters.replaceResponseBodyFromFile('src/mock/static/files/test.pdf', proxyRes, res);
+				HttpAdapters.replaceResponseBodyFromFile(
+					'src/mock/static/files/test.pdf',
+					proxyRes,
+					res,
+				);
 			}
 		}
 	}

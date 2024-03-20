@@ -1,11 +1,15 @@
 import express from 'express';
-import { HttpProxyMiddleware, Notify, ProxyOptions } from '@opi_pib/node-utility';
+import {
+	HttpProxyMiddleware,
+	Notify,
+	ProxyOptions,
+} from '@opi_pib/node-utility';
 
 import { User } from './modules/user/user';
 
 const app = express();
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const user = new User();
